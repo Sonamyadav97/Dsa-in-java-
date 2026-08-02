@@ -1,0 +1,23 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        ArrayList<Integer> arr=new ArrayList<>();
+        for(int i=0;i<nums.length+1;i++){
+            arr.add(i);
+        }
+        int i=0;
+        int j=0;
+        while(i!=nums.length){
+            if(nums[i]==arr.get(j)){
+                arr.remove(j);
+                i++;
+                j=0;
+            }
+            else{
+            j++;
+            }
+        }
+        int and=arr.get(0);
+        return and;
+        
+    }
+}
