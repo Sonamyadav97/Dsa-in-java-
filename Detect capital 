@@ -1,0 +1,28 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        char ch=' ';
+       int  capco=0;
+       int lowco=0;
+        for(int i=0;i<word.length();i++){
+            ch=word.charAt(i);
+           if( Character.isUpperCase(ch)){
+               capco++;
+           }
+           else {
+               lowco++;
+           }
+       }
+       if(lowco==word.length() || capco==word.length()){
+            return true;
+        }
+       if(lowco==1 && capco>lowco){
+            return false;
+        }
+        else if(capco==1){
+            if(Character.isUpperCase(word.charAt(0))){
+                return true;
+                }
+             }
+        return false;
+    }
+}
