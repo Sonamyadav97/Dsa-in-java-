@@ -1,0 +1,19 @@
+class Solution {
+    public int firstUniqChar(String s) {
+        char so= ' ';
+        for(int i=0;i<s.length();i++){
+            so=s.charAt(i);
+            int j=0;
+            while(j<s.length()){
+        if(i!=j && s.charAt(j)==so){
+                break;
+              }
+              j++;
+        }
+        if(j==s.length()){
+            return i;
+        }
+        }
+        return -1;
+    }
+}
